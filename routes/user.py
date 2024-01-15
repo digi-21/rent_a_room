@@ -14,26 +14,35 @@ async def add_user(request:Request, current_user: dict = Depends(get_current_use
     first_name = data['first_name']
     last_name = data["last_name"]
     date_of_birth = data['date_of_birth']
-    firebase_id = data["firebase_id"]
     email = data["email"]
     phone_number = data["phone_number"]
     user: User = {
         "first_name" : first_name,
         "last_name" : last_name,
         "date_of_birth" : date_of_birth,
-        "firebase_id" : firebase_id,
+        "firebase_id" : uuid,
         "email" : email,
         "phone_number" : phone_number,
-        "profile_pic" : None
+        "profile_pic" : None,
+        "space" : None,
+        "Tenant" : None,
+        "Buddyup" : None,
+        "verification" : False, 
+        "notifications" : None,
+        "liked" : None
     }
-    new_user = await add_new_user(user)
-    print(new_user)
-    response_data = {
+    try:
+        await add_new_user(user)
+        response_data = {
         "status_code": "200",
         "message": "user created successfully!",
-    }
-    response = JSONResponse(content=response_data)
-    return response
+        }
+        response = JSONResponse(content=response_data)
+        return response
+    
+    except:
+        raise HTTPException(status_code=400, detail="Bad request")   
+    
 
 
 
