@@ -29,7 +29,7 @@ async def initiate_database():
     try:
         client = AsyncIOMotorClient(Settings().DATABASE_URL, server_api=ServerApi('1'))
         print("1----------------------------------------")
-        database = client["solvyfidb"]
+        database = client["rent_a_roomDB"]
         print("2----------------------------------------")
         await init_beanie(database,
                         document_models=[User,Property])

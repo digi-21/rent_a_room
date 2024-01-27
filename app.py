@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware 
+from routes.user import router as UserRouter
+
 
 
 app = FastAPI()
@@ -28,5 +30,5 @@ app.add_middleware(
 async def read_root():
     return print("welcome to rent_a_room!")
 
-#app.include_router(DemoRouter, tags=["demo"], prefix="/demo")
+app.include_router(UserRouter, tags=["user"], prefix="/user")
 
