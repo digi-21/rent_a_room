@@ -2,7 +2,7 @@ from typing import Optional
 from xml.dom.minidom import Document
 from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
-from pydantic import BaseSettings
+# from pydantic import BaseSettings
 from models.user import User
 from models.property import Property
 from pymongo import MongoClient
