@@ -6,7 +6,7 @@ from typing import Optional, Any
 from beanie import PydanticObjectId 
 from datetime import date, datetime
 from uuid import UUID
-from typing import Union , 
+from typing import Union 
 from fastapi import Body
 from bson.objectid import ObjectId as BsonObjectId
 
