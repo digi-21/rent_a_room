@@ -14,15 +14,15 @@ async def add_user(request:Request, current_user: dict = Depends(get_current_use
     first_name = data['first_name']
     last_name = data["last_name"]
     date_of_birth = data['date_of_birth']
-    email = data["email"]
-    phone_number = data["phone_number"]
+    # email = data["email"]
+    # phone_number = data["phone_number"]
     user: User = {
         "first_name" : first_name,
         "last_name" : last_name,
         "date_of_birth" : date_of_birth,
         "firebase_id" : uuid,
-        "email" : email,
-        "phone_number" : phone_number,
+        "email" : None,
+        "phone_number" : None,
         "profile_pic" : None,
         "space" : None,
         "Tenant" : None,
