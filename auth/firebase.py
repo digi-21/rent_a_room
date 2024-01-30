@@ -5,7 +5,7 @@ from fastapi.security import HTTPBearer
 from typing import Dict, Union
 from uuid import UUID
 
-cred = credentials.Certificate("/home/ubuntu/brkpush/auth/sbrooms-2b842-firebase-adminsdk-pzvbh-9835d17eb8.json")
+cred = credentials.Certificate("/home/ubuntu/rent_a_room/auth/sbrooms-2b842-firebase-adminsdk-pzvbh-9835d17eb8.json")
 initialize_app(cred)
 
 
