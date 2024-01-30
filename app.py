@@ -2,11 +2,18 @@ from fastapi import FastAPI, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware 
 from routes.user import router as UserRouter
+from contextlib import asynccontextmanager
+from config.config import initiate_database
 
 
 
-app = FastAPI()
+@asynccontextmanager
+async def start_app(app: FastAPI):
+    await initiate_database()
+    yield
+    print("3")
 
+app = FastAPI(lifespan=start_app)
 
 # @app.on_event("startup")
 # async def start_database():
