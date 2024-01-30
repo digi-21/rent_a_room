@@ -25,7 +25,7 @@ class PydanticObjectId(BsonObjectId):
     def __modify_schema__(cls, field_schema):
         field_schema.update(type="string")
 
-class User :
+class User(Document):
     first_name : str | None = None
     last_name : str | None = None
     date_of_birth : datetime | None = None
