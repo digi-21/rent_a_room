@@ -29,6 +29,7 @@ class User(Document):
     first_name : str | None = None
     last_name : str | None = None
     date_of_birth : datetime | None = None
+    gender : str | None = None
     firebase_id : PydanticObjectId | None = None
     email : EmailStr | None = None
     phone_number : str | None = None
@@ -49,6 +50,7 @@ class Config:
                 "first_name" : None,
                 "last_name" : None,
                 "date_of_birth" : None,
+                "gender" : None,
                 "firebase_id" : None, 
                 "email" : None,
                 "phone_number" : None,
