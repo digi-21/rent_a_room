@@ -10,6 +10,10 @@ from typing import Union
 from fastapi import Body
 from bson.objectid import ObjectId as BsonObjectId
 
+
+class Collection:
+        name = "property"
+
 class Property :
     name : str 
     property_owner_name : str
