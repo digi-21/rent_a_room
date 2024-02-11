@@ -8,9 +8,7 @@
 from models.property import Property
 import pymongo
 
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient['rent_a_room']
-user_collection = Property
+
 
 async def add_new_property(property_dict: dict):
     property = Property(**property_dict)

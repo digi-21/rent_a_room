@@ -8,9 +8,6 @@
 from models.user import User
 import pymongo
 
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient['rent_a_room']
-user_collection = User
 
 async def add_new_user(user_dict: dict):
     user = User(**user_dict)
