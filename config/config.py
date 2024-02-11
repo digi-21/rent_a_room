@@ -31,8 +31,8 @@ async def initiate_database():
         print("1----------------------------------------")
         database = client["rent_a_roomDB"]
         print("2----------------------------------------")
-        await init_beanie(database,
-                        document_models=[User,Property])
+        # await init_beanie(database,
+        #                 document_models=[User,Property])
         print("3----------------------------------------")
         
         print("Pinged your deployment. You successfully connected to MongoDB!")
