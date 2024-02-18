@@ -50,7 +50,9 @@ router = APIRouter()
 
 @router.post("/add_a_user/")
 async def add_user(request:Request):
+    print("1")
     data = await request.json()
+    print(data)
     first_name = data['first_name']
     last_name = data["last_name"]
     date_of_birth = data['date_of_birth']
